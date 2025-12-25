@@ -1,0 +1,354 @@
+
+/* ESTILO GLOBAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    }
+
+    .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    }
+
+    .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    }
+
+    .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    }
+
+    .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    }
+
+    .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    }
+
+    .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    }
+
+    .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    }
+
+    .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    }
+
+    .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    }
+
+    .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    }
+
+    .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    }
+
+    .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    }
+
+    .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    }
+
+    .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    }
+
+    .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    }
+
+    .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    }
+
+}
+
+body{
+    background-color: #000;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #8500cd;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* ESTILO DO CABEÇALHO */
+
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: #ffffff57;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+header nav ul{
+    list-style-type: none;
+
+}
+
+header nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 100px #8500cd60;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+header .logo img{
+    width: 130px;
+}
+
+h2.titulo-sec{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2.titulo-sec span{
+    color: #8500cd;
+}
+
+/* ESTILO DO TOPO DO SITE */
+
+section.topo-site{
+    padding: 40px 4%;
+
+}
+
+main .img-topo-site img{
+    width: 100%;
+    max-width: 800px;
+}
+
+section.topo-site .flex{
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.topo-site h1{
+    color: #fff;
+    font-size: 50px;
+    line-height: 40px;
+}
+
+.topo-site h1 span{
+    color: #8500cd;
+}
+
+.topo-site .txt-topo-site p{
+    color: #ccc;
+    margin: 40px 0;
+    font-size: 18px;
+}   
+
+.topo-site .img-topo-site{
+    position: relative;
+    animation: upDown 2s infinite alternate ease-in-out;
+}
+
+@keyframes upDown {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 30px;
+    }
+}
+
+/* ESTILO DO MEIO DO SITE */
+
+/* Contêiner principal (esconde o que não cabe) */
+.carousel-container {
+  padding: 40px 4%;
+  overflow: hidden; /* Esconde os itens que saem da tela */
+  width: 100%;
+  overflow: hidden;
+  position: relative; /* Para posicionar setas, se adicionar */
+}
+
+/* Trilha (onde os itens ficam lado a lado) */
+.carousel-track {
+  display: flex; /* Alinha os itens em linha */
+  gap: 30px;
+  padding: 60px 20px;
+  margin-top: 40px;
+  flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+  overflow: hidden; /* Habilita a rolagem horizontal */
+  /* white-space: nowrap; */ /* Alternativa para inline-block */
+  scroll-behavior: smooth; /* Opcional: para rolagem suave */
+  -webkit-overflow-scrolling: touch; /* Para rolagem suave em iOS */
+}
+
+/* Estilo dos itens individuais */
+.carousel-item {
+  list-style-type: none;
+  flex-shrink: 0; /* Impede que os itens encolham */
+  width: 300px; /* Largura de cada item (ajuste conforme necessário) */
+  margin-right: 10px; /* Espaçamento entre os itens */
+  background-color: #000;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Inclui padding e border na largura */
+}
+
+.carousel-item:hover{
+    box-shadow: 0px 0px 20px #8500cd60;
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+/* Estilo para rolagem (opcional) */
+.carousel-track::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.carousel-item .icon{
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0px;
+    color: #8500cd;
+    object-fit: contain;
+}
+.carousel-item i {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    color: #8500cd;
+    object-fit: contain;
+}
+
+.carousel-item h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #8500cd;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 60px;
+  border: none;      
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: .2s;
+}
+
+.carousel-btn:hover{
+  color: #fff;
+}
+
+.carousel-btn.left{
+  left: 10px;
+}
+
+.carousel-btn.right{
+  right: 10px;
+}
