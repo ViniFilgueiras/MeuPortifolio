@@ -202,11 +202,11 @@
         <section class="formulario">
             <div class="interface">
                 <h2 class="titulo-sec">Fale <span>Comigo.</span></h2>
-                <form action="">
-                    <input type="text" placeholder="Seu Nome" required>
-                    <input type="email" placeholder="Seu Email" required>
-                    <input type="email" placeholder="Seu Celular">
-                    <textarea placeholder="Sua Mensagem" class="suamensagem" required></textarea>
+                <form method="post" action="doc.php">
+                    <input class="input" type="text" name="nome" placeholder="Seu Nome" required>
+                    <input class="input" type="text" name="email" placeholder="Seu Email" required>
+                    <input class="input" type="text" name="celular" placeholder="Seu Celular">
+                    <textarea name="mensagem" placeholder="Sua Mensagem" class="suamensagem" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="Enviar"></div>
                 </form>
             </div>
