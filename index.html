@@ -202,12 +202,20 @@
         <section class="formulario">
             <div class="interface">
                 <h2 class="titulo-sec">Fale <span>Comigo.</span></h2>
-                <form method="post" action="doc.php">
+                <form name="contato"
+                    method="POST"
+                    data-netlify="true">
+
+                    <input type="hidden" name="form-name" value="contato">
+
                     <input class="input" type="text" name="nome" placeholder="Seu Nome" required>
-                    <input class="input" type="text" name="email" placeholder="Seu Email" required>
+                    <input class="input" type="email" name="email" placeholder="Seu Email" required>
                     <input class="input" type="text" name="celular" placeholder="Seu Celular">
                     <textarea name="mensagem" placeholder="Sua Mensagem" class="suamensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="Enviar"></div>
+
+                    <div class="btn-enviar">
+                        <input type="submit" value="Enviar">
+                    </div>
                 </form>
             </div>
         </section><!-- .Formulario-->
