@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- FIM Google Fonts -->
     <!-- BOOTSTRAP Icons-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- FIM BOOTSTRAP Icons-->
+    <!-- MathJax para renderizar LaTeX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/eu.png">
     <title>Vinícius Filgueiras</title>
 </head>
 <body>
@@ -25,9 +28,9 @@
             </div><!-- .logo -->
             <nav class="menu_desktop">
                 <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="researchs.html">Portfolio</a></li>
                     <li><a href="researchs.html">Researchs</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul><!-- .menu -->
@@ -71,7 +74,8 @@
         <section class="Projetos e Pesquisas que participei">
             <div class="carousel-container">
                 <h2 class="titulo-sec">Projetos e Pesquisas <span>que Participei.</span></h2>
-                <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
+                <p>Confira alguns dos meus trabalhos e projetos pessoais.</p>
+                <button class="carousel-btn right" onclick="scrollCarousel(this, 1)">›</button>
                 <div class="carousel-track">
                     <div class="carousel-item">
                         <img src="images/PET.png" class="icon" alt="PET - EngComp">
@@ -99,29 +103,144 @@
                         <p>Semana das Engenharia Elétrica, de Computação e de Telecomunicações.</p>
                     </div>
                 </div>
-                <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>                
+                <button class="carousel-btn left" onclick="scrollCarousel(this, -1)">‹</button>               
             </div>
         </section><!-- .Projetos e Pesquisas que participei -->
 
-        <section class="Sobre">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="images/eu" alt="">
-                    </div><!--img-sobre-->
-                    <div class="txt-sobre">
+        <section class="Portfolio">
+            <div class="carousel-container">
+                <h2 class="titulo-sec">Meu <span>Portfolio.</span></h2>
+                <p>Confira alguns dos meus trabalhos e projetos pessoais.</p>
+                <button class="carousel-btn right" onclick="scrollCarousel(this, 1)">›</button>
+                <div class="carousel-track">
+                    
+                    <!-- Item 1 -->
+                    <div class="carousel-item">
+                        <div class="portfolio-image-wrapper">
+                            <img src="images/projeto1.jpg" alt="Projeto 1" class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Sistema de IA para Robótica</h3>
+                            <div class="portfolio-description">
+                                Desenvolvimento de algoritmos de visão computacional utilizando deep learning. 
+                                A precisão do modelo pode ser expressa como \( f(x) = \frac{1}{1 + e^{-x}} \), 
+                                onde alcançamos 95% de acurácia.
+                            </div>
+                            <span class="portfolio-tag">Machine Learning</span>
+                        </div>
+                    </div>
 
-                    </div><!-- .txt-sobre-->
-                </div><!-- .flex-->
-            </div><!-- .interface-->
-        </section><!-- .Sobre-->
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <div class="portfolio-image-wrapper">
+                            <img src="images/projeto2.jpg" alt="Projeto 2" class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Computação Distribuída</h3>
+                            <div class="portfolio-description">
+                                Implementação de sistema edge computing para IoT agrícola. 
+                                Otimização de latência: \( L = \sum_{i=1}^{n} t_i \cdot w_i \), 
+                                reduzindo o tempo de resposta em 60%.
+                            </div>
+                            <span class="portfolio-tag">Edge Computing</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="carousel-item">
+                        <div class="portfolio-image-wrapper">
+                            <img src="images/projeto3.jpg" alt="Projeto 3" class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Algoritmos de Otimização</h3>
+                            <div class="portfolio-description">
+                                Pesquisa em algoritmos genéticos para problemas NP-completos. 
+                                Função fitness: \( F(x) = \alpha \cdot x^2 + \beta \cdot x + \gamma \), 
+                                com convergência em \( O(n \log n) \).
+                            </div>
+                            <span class="portfolio-tag">Algoritmos</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="carousel-item">
+                        <div class="portfolio-image-wrapper">
+                            <img src="images/projeto4.jpg" alt="Projeto 4" class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Sistema Embarcado IoT</h3>
+                            <div class="portfolio-description">
+                                Desenvolvimento de firmware para microcontroladores ESP32. 
+                                Consumo energético otimizado: \( E = \int_0^T P(t) \, dt \), 
+                                aumentando autonomia em 40%.
+                            </div>
+                            <span class="portfolio-tag">IoT</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="carousel-item">
+                        <div class="portfolio-image-wrapper">
+                            <img src="images/projeto5.jpg" alt="Projeto 5" class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Processamento de Sinais</h3>
+                            <div class="portfolio-description">
+                                Análise de sinais biomédicos usando transformada de Fourier. 
+                                \( X(f) = \int_{-\infty}^{\infty} x(t) e^{-j2\pi ft} \, dt \), 
+                                filtragem com SNR de 25dB.
+                            </div>
+                            <span class="portfolio-tag">DSP</span>
+                        </div>
+                    </div>
+
+                </div><!-- .carousel-track -->
+                <button class="carousel-btn left" onclick="scrollCarousel(this, -1)">‹</button>
+            </div><!-- .carousel-container-->
+        </section><!-- .Portfolio-->
+
+        <section class="formulario">
+            <div class="interface">
+                <h2 class="titulo-sec">Fale <span>Comigo.</span></h2>
+                <form action="">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu Email" required>
+                    <input type="email" placeholder="Seu Celular">
+                    <textarea placeholder="Sua Mensagem" class="suamensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="Enviar"></div>
+                </form>
+            </div>
+        </section><!-- .Formulario-->
     </main>
 
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo.png" alt="logo Vinícius Filgueiras">
+                    </div>
+                    <div class="btn-social">
+                        <a href=""><button><i class="bi bi-github"></i></button></a>
+                        <a href=""><button><i class="bi bi-instagram"></i></button></a>
+                        <a href=""><button><i class="bi bi-linkedin"></i></button></a>
+                    </div>
+                </div>
+            </div><!-- .line-footer -->
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:viniciusmffilgueiras@gmail.com">viniciusmffilgueiras@gmail.com</a></p>
+            </div><!-- .line-footer -->
+            <p>© 2024 Vinícius Filgueiras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
     <script>
-        function scrollCarousel(direction){
-            const track = document.querySelector(".carousel-track");
+        function scrollCarousel(button, direction) {
+            const carousel = button.closest(".carousel-container");
+            const track = carousel.querySelector(".carousel-track");
             const item = track.querySelector(".carousel-item");
-            const gap = 30; // o mesmo gap do CSS
+            const gap = 30;
+
             const scrollAmount = item.offsetWidth + gap;
 
             track.scrollBy({
@@ -129,6 +248,11 @@
                 behavior: "smooth"
             });
         }
+
+        // Renderizar LaTeX após carregar a página
+        window.addEventListener('load', function() {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        });
     </script>
 
 </body>
