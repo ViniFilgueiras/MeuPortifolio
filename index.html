@@ -30,12 +30,12 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="researchs.html">Portfolio</a></li>
                     <li><a href="researchs.html">Researchs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#contato">Contact</a></li>
                 </ul><!-- .menu -->
             </nav>
 
             <div class="btn-contato">
-                <a href="contact.html">
+                <a href="#contato">
                     <button>Entre em contato</button>
                 </a>
             </div>
@@ -51,7 +51,7 @@
                         <p>Estudante de Engenharia de Computação, uso o código pra transformar ideias em projetos reais. Gosto de entender como as coisas funcionam e construir soluções que funcionem fora do papel.</p>
                         <div class="flex">   
                             <div class="btn-contato">
-                                <a href="contact.html">
+                                <a href="#contato">
                                     <button>Entre em contato</button>
                                 </a>
                             </div>
@@ -197,12 +197,12 @@
             </div><!-- .carousel-container-->
         </section><!-- .Portfolio-->
 
-        <section class="formulario">
+        <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo-sec">Fale <span>Comigo.</span></h2>
                 
                 <!-- Formulário com Netlify Forms -->
-                <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="form-contato" action="/sucesso.html">
+                <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="form-contato">
                     <!-- Campo oculto obrigatório para Netlify Forms -->
                     <input type="hidden" name="form-name" value="contato">
                     
@@ -216,24 +216,16 @@
                     <input class="input" type="tel" name="celular" placeholder="Seu Celular">
                     <textarea name="mensagem" placeholder="Sua Mensagem" class="suamensagem" required></textarea>
                     <div class="btn-enviar">
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar" id="btn-submit">
                     </div>
                 </form>
 
                 <!-- Mensagem de sucesso -->
-                <div id="mensagem-sucesso" style="display: none; text-align: center; margin-top: 30px; padding: 20px; background: #8500cd30; border-radius: 15px;">
-                    <p style="color: #8500cd; font-size: 20px; margin: 0;">
+                <div id="mensagem-sucesso" style="display: none; text-align: center; margin-top: 30px; padding: 30px; background: #8500cd30; border-radius: 15px; animation: fadeIn 0.5s;">
+                    <p style="color: #8500cd; font-size: 24px; margin: 0;">
                         <i class="bi bi-check-circle-fill"></i> Mensagem enviada com sucesso!
                     </p>
-                    <p style="color: #ccc; margin-top: 10px;">Em breve entrarei em contato.</p>
-                </div>
-
-                <!-- Mensagem de erro -->
-                <div id="mensagem-erro" style="display: none; text-align: center; margin-top: 30px; padding: 20px; background: #cd000030; border-radius: 15px;">
-                    <p style="color: #cd0000; font-size: 20px; margin: 0;">
-                        <i class="bi bi-x-circle-fill"></i> Erro ao enviar mensagem!
-                    </p>
-                    <p style="color: #ccc; margin-top: 10px;">Tente novamente ou envie um email diretamente.</p>
+                    <p style="color: #ccc; margin-top: 15px; font-size: 16px;">Obrigado pelo contato! Responderei em breve.</p>
                 </div>
             </div>
         </section><!-- .Formulario-->
@@ -260,6 +252,13 @@
         </div>
     </footer>
 
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
     <script>
         function scrollCarousel(button, direction) {
             const carousel = button.closest(".carousel-container");
@@ -280,12 +279,28 @@
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         });
 
+        // Manipular envio do formulário
+        const form = document.getElementById('form-contato');
+        form.addEventListener('submit', function(e) {
+            const btnSubmit = document.getElementById('btn-submit');
+            btnSubmit.value = 'Enviando...';
+            btnSubmit.disabled = true;
+        });
+
         // Verificar se o formulário foi enviado com sucesso
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            document.getElementById('form-contato').style.display = 'none';
-            document.getElementById('mensagem-sucesso').style.display = 'block';
-        }
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') !== null || window.location.search.includes('success')) {
+                document.getElementById('form-contato').style.display = 'none';
+                document.getElementById('mensagem-sucesso').style.display = 'block';
+                
+                // Scroll suave para a mensagem de sucesso
+                document.getElementById('mensagem-sucesso').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        });
     </script>
 
 </body>
