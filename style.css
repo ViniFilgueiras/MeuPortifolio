@@ -43,6 +43,7 @@ button:hover{
 
 header{
     padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff10;
 }
 
 header > .interface{
@@ -115,7 +116,7 @@ section.sobre .flex{
 .sobre h1{
     color: #fff;
     font-size: 50px;
-    line-height: 40px;
+    line-height: 60px;
 }
 
 .sobre h1 span{
@@ -193,6 +194,7 @@ section.sobre .flex{
     padding: 20px;
     border-radius: 8px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .carousel-item:hover{
@@ -541,8 +543,18 @@ footer .line-footer p a:hover{
         display: none;
     }
 
+    .sobre .txt-sobre{
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
     .sobre .txt-sobre h1{
         font-size: 32px;
+        line-height: 40px;
+    }
+    .sobre .txt-sobre p{
+        padding: 0;
+        margin: 30px 0;
     }
 
     .sobre .img-sobre-cell{
@@ -591,6 +603,23 @@ footer .line-footer p a:hover{
         padding: 8px 20px;
         font-size: 15px;
     }
+
+    .btn-contato button{
+        padding: 10px 40px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #8500cd;
+        border: 0;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    header .btn-contato{
+        display: none;
+    }
+    
     
 }
 
